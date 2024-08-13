@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toy Store</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Toy Store</h1>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Products</a>
+            <a href="#" onclick="showCart()">Cart (<span id="cart-count">0</span>)</a>
+            <a href="#">Account</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="search">
+            <input type="text" id="search-input" placeholder="Search for toys...">
+        </section>
+        
+        <section id="filters">
+            <label for="category-filter">Filter by Category:</label>
+            <select id="category-filter">
+                <option value="">All Categories</option>
+                <option value="cars">Cars</option>
+                <option value="blocks">Blocks</option>
+                <option value="figures">Figures</option>
+                <option value="puzzles">Puzzles</option>
+                <option value="dolls">Dolls</option>
+            </select>
+        </section>
+
+        <section id="products" class="grid">
+            <!-- Existing Products -->
+            <article class="product" data-category="cars">
+                <img src="p1.jpg" alt="Toy Car">
+                <h2>Toy Car</h2>
+                <p>300Rs</p>
+                <button onclick="addToCart('Toy Car', 300)">Add to Cart</button>
+            </article>
+            <article class="product" data-category="blocks">
+                <img src="p2.jpg" alt="Building Blocks">
+                <h2>Building Blocks</h2>
+                <p>750Rs</p>
+                <button onclick="addToCart('Building Blocks', 750)">Add to Cart</button>
+            </article>
+            <article class="product" data-category="figures">
+                <img src="p3.jpg" alt="Action Figure">
+                <h2>Action Figure</h2>
+                <p>500Rs</p>
+                <button onclick="addToCart('Action Figure', 500)">Add to Cart</button>
+            </article>
+
+            <!-- New Products -->
+            <article class="product" data-category="puzzles">
+                <img src="p4.jpg" alt="Jigsaw Puzzle">
+                <h2>Jigsaw Puzzle</h2>
+                <p>200Rs</p>
+                <button onclick="addToCart('Jigsaw Puzzle', 200)">Add to Cart</button>
+            </article>
+            <article class="product" data-category="dolls">
+                <img src="p5.jpg" alt="Doll">
+                <h2>Doll</h2>
+                <p>659Rs</p>
+                <button onclick="addToCart('Doll', 659)">Add to Cart</button>
+            </article>
+            <article class="product" data-category="puzzles">
+                <img src="p6.jpg" alt="3D Puzzle">
+                <h2>3D Puzzle</h2>
+                <p>1500Rs</p>
+                <button onclick="addToCart('3D Puzzle', 1500)">Add to Cart</button>
+            </article>
+            <article class="product" data-category="dolls">
+                <img src="p7.jpg" alt="Baby Doll">
+                <h2>Baby Doll</h2>
+                <p>900Rs</p>
+                <button onclick="addToCart('Baby Doll', 900)">Add to Cart</button>
+            </article>
+            <article class="product" data-category="cars">
+                <img src="p8.jpg" alt="Race Car">
+                <h2>Race Car</h2>
+                <p>3000Rs</p>
+                <button onclick="addToCart('Race Car', 3000)">Add to Cart</button>
+            </article>
+            <article class="product" data-category="blocks">
+                <img src="p9.jpg" alt="Wooden Blocks">
+                <h2>Wooden Blocks</h2>
+                <p>2400Rs</p>
+                <button onclick="addToCart('Wooden Blocks', 2400)">Add to Cart</button>
+            </article>
+        </section>
+    </main>
+    <footer>
+        <p>&copy;  Toy Store</p>
+    </footer>
+<!-- Cart Modal -->
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeCart()">&times;</span>
+            <h2>Your Cart</h2>
+            <ul id="cart-items"></ul>
+            <p id="cart-total">Total: rs0.00</p>
+            <button onclick="checkout()">Checkout</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
